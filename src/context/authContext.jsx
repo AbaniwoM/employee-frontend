@@ -13,7 +13,8 @@ const authContext = ({children}) => {
             if(token) {
             const response = await axios.get('https://employee-api-woad.vercel.app/api/auth/verify', {
                 headers: {
-                    "Authorization" : `Bearer ${token}`
+                    "Authorization" : `Bearer ${token}`,
+                    "Access-Control-Allow-Origin": "*"
                 }
             })
             if(response.data.success) {
